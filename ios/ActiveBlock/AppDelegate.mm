@@ -1,6 +1,9 @@
 #import "AppDelegate.h"
 
 #import <React/RCTBundleURLProvider.h>
+#import "RCTWebView.h"
+//#import "RTNCenteredText.h"
+#import "RCTAppBlocker.h"
 
 @implementation AppDelegate
 
@@ -26,6 +29,14 @@
 #else
   return [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
 #endif
+}
+
+- (NSDictionary<NSString *,Class<RCTComponentViewProtocol>> *)thirdPartyFabricComponents
+{
+  NSMutableDictionary * dictionary = [super thirdPartyFabricComponents].mutableCopy;
+  dictionary[@"CustomWebView"] = [RCTWebView class];
+  dictionary[@"AppBlocker"] = [RCTAppBlocker class];
+  return dictionary;
 }
 
 @end

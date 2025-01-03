@@ -9,6 +9,14 @@
     "start": "react-native start",
     "test": "jest"
   },
+  "codegenConfig": {
+    "name": "ActiveBlockSpec",
+    "type": "all",
+    "jsSrcsDir": "specs",
+    "android": {
+      "javaPackageName": "com.activeblock"
+    }
+  },
   "dependencies": {
     "react": "18.3.1",
     "react-native": "0.76.5"
