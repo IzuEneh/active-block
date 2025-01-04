@@ -6,15 +6,16 @@
  */
 
 import React from 'react';
-import {StyleSheet, View, Text} from 'react-native';
+import {StyleSheet, View, Text, SafeAreaView} from 'react-native';
 import AppBlocker from './specs/AppBlockerNativeComponent';
 
 function App(): React.JSX.Element {
   return (
-    <View style={styles.container}>
-      <Text>This is a demo app</Text>
-      <AppBlocker />
-    </View>
+    <SafeAreaView style={styles.container}>
+      <Text>Blocklists</Text>
+      <View style={styles.blocklistContainer} />
+      <AppBlocker style={styles.appBlocker} />
+    </SafeAreaView>
   );
 }
 
@@ -23,7 +24,14 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     alignContent: 'center',
-    backgroundColor: 'blue',
+    padding: 20,
+  },
+  appBlocker: {
+    height: 50,
+    width: '100%',
+  },
+  blocklistContainer: {
+    flex: 1,
   },
 });
 

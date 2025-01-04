@@ -20,6 +20,7 @@
 		CEB92D9F2D260FCB002BD98D /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB92D9E2D260FCB002BD98D /* WebKit.framework */; };
 		CEB92DA72D2632AF002BD98D /* AppSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB92DA62D2632AF002BD98D /* AppSelector.swift */; };
 		CEB92DAA2D2763D6002BD98D /* RCTAppBlocker.mm in Sources */ = {isa = PBXBuildFile; fileRef = CEB92DA92D2763D6002BD98D /* RCTAppBlocker.mm */; };
+		CEB92DAC2D28B82C002BD98D /* AppSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB92DAB2D28B81F002BD98D /* AppSelectorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		CEB92DA62D2632AF002BD98D /* AppSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSelector.swift; sourceTree = "<group>"; };
 		CEB92DA82D276121002BD98D /* RCTAppBlocker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCTAppBlocker.h; sourceTree = "<group>"; };
 		CEB92DA92D2763D6002BD98D /* RCTAppBlocker.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = RCTAppBlocker.mm; sourceTree = "<group>"; };
+		CEB92DAB2D28B81F002BD98D /* AppSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSelectorViewController.swift; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -267,6 +269,7 @@
 		CEB92DA42D263283002BD98D /* AppSelector */ = {
 			isa = PBXGroup;
 			children = (
+				CEB92DAB2D28B81F002BD98D /* AppSelectorViewController.swift */,
 				CEB92DA82D276121002BD98D /* RCTAppBlocker.h */,
 				CEB92DA62D2632AF002BD98D /* AppSelector.swift */,
 				CEB92DA52D2632AF002BD98D /* ActiveBlock-Bridging-Header.h */,
@@ -520,6 +523,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEB92DAC2D28B82C002BD98D /* AppSelectorViewController.swift in Sources */,
 				CEB92DAA2D2763D6002BD98D /* RCTAppBlocker.mm in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
 				CEB92D9C2D260B65002BD98D /* RCTWebView.mm in Sources */,
@@ -716,10 +720,7 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
@@ -788,10 +789,7 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;

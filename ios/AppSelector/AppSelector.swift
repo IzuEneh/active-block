@@ -11,7 +11,7 @@ struct AppSelector: View {
   @State var selection = FamilyActivitySelection()
   @State var isPresented = false
     var body: some View {
-      Button("Select Apps to Discourage") {
+      Button("ADD A NEW BLOCKLIST") {
         isPresented = true
       }
       .familyActivityPicker(isPresented: $isPresented,

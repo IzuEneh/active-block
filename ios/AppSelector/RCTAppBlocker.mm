@@ -10,8 +10,9 @@
 #import <react/renderer/components/ActiveBlockSpec/EventEmitters.h>
 #import <react/renderer/components/ActiveBlockSpec/Props.h>
 #import <react/renderer/components/ActiveBlockSpec/RCTComponentViewHelpers.h>
-//#import <Foundation/Foundation.h>
-//#import "ActiveBlock-Swift.h"
+
+#import "ActiveBlock-Bridging-Header.h"
+#import "ActiveBlock-Swift.h"
 
 using namespace facebook::react;
 
@@ -20,12 +21,17 @@ using namespace facebook::react;
 @end
 
 @implementation RCTAppBlocker {
+  AppSelectorViewController * _appSelectorVC;
 }
 
 -(instancetype)init
 {
-//  [super init];
-  return [super init];
+  if (self = [super init]) {
+    _appSelectorVC = [AppSelectorViewController new];
+    [self addSubview: _appSelectorVC.view];
+  }
+//  AppSelectorViewController *appSelectorUIViewController = [[AppSelectorViewController alloc] init];
+  return self;
 }
 
 - (void)updateProps:(Props::Shared const &)props oldProps:(Props::Shared const &)oldProps
@@ -40,6 +46,7 @@ using namespace facebook::react;
 -(void)layoutSubviews
 {
   [super layoutSubviews];
+  _appSelectorVC.view.frame = self.bounds;
 }
 
 // Event emitter convenience method
